@@ -1,0 +1,17 @@
+{
+  "name": "twitchbot",
+  "version": "1.0.0",
+  "description": "Bot for twitch acc",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Joshua Plateros",
+  "license": "ISC",
+  "dependencies": {
+    "bufferutil": "^4.0.2",
+    "tmi.js": "^1.5.0",
+    "twitch-js": "^2.0.0-beta.33",
+    "utf-8-validate": "^5.0.3"
+  }
+}
