@@ -86,6 +86,7 @@ function onMessageHandler (target, context, msg, self) {
 			{
 				const chance = 100 - num;
 				client.say(target, `Grub has not been saved!, your chance was ${chance}%`);
+				client.say(target, `Total number of ${grubCount} grubs have been saved!`);
 			}
 		}
 	}
