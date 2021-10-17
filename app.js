@@ -75,10 +75,12 @@ function onMessageHandler (target, context, msg, self) {
 				grubCommandRecently.delete(target);
 			}, 5000); //For timers (5000 seconds i'm pretty sure)
 			
-			if (num < 20) // Chance of succeeding
+			if (num < 90) // Chance of succeeding
 			{
+				const change = 100 - num;
 				grubCount++;
 				client.say(target, `Grub saved pog! Total of ${grubCount} grubs have been saved!`);
+				client.say(target, `Your chance was ${change}%`);
 				// Rewrite grubCount in file
 				rewriteGrubs(grubCount);
 			}
@@ -90,10 +92,12 @@ function onMessageHandler (target, context, msg, self) {
 			}
 		}
 	}
-	else if (commandName === '!commands')
-	{
+	else if (commandName === '!commands') {
 		client.say(target, `!grub, !socials, !youtube, !discord`);
-	}
+        }
+	else if(commandName === '!vtuber') {
+            client.say(target, `I WILL BE USING FACECAM FOR A BIT, WILL ONLY USE VTUBER IF IM FEELING LIKE IT OR VTUBER COLLAB`);
+        }
 	else
 	{
 	}
@@ -109,7 +113,7 @@ function grubSave () {
 }
 
 function rewriteGrubs(grubCount) {
-	fs.writeFile('grubs.txt', grubCount, function(err) {
+	fs.writeFile('grubs.txt', grubCount.toString(), function(err) {
 		if (err) {
 			return console.log(err);
 		}
